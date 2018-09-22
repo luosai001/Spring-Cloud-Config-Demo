@@ -5,9 +5,19 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/luosai001/SpringCloudConfigRepo
+#          uri: https://github.com/luosai001/SpringCloudConfigRepo
+          uri: https://github.com/luosai001/config-repo.git  # default uri 当匹配不到仓库时，用这个默认的uri
+          search-paths: file # 查找仓库根目录和file 目录， 应用正则表达式
           username: luosai001
-          password: ******
+          password: l,s19910103
 
+          repos:
+            project-a:
+              pattern: spring-cloud-config-client/pro   # {application}/{profile}
+              uri: https://github.com/luosai001/SpringCloudConfigRepo.git
+            project-b:
+              pattern: project-b/dev # {application}/{profile}
+              uri: https://github.com/luosai001/config-repo.git
+              search-paths: file  # 查找仓库根目录和file 目录， 应用正则表达式
 
 
