@@ -8,15 +8,15 @@ spring:
 #          uri: https://github.com/luosai001/SpringCloudConfigRepo
           uri: https://github.com/luosai001/config-repo.git  # default uri 当匹配不到仓库时，用这个默认的uri
           search-paths: file # 查找仓库根目录和file 目录， 应用正则表达式
-          username: luosai001
-          password: l,s19910103
+          username: admin
+          password: 123456
 
-          repos:
+          repos:  # 配置多个仓库，各个应用通过模式匹配找到对应的仓库，读取配置
             project-a:
-              pattern: spring-cloud-config-client/pro   # {application}/{profile}
+              pattern: spring-cloud-config-client/*   # {application}/{profile}
               uri: https://github.com/luosai001/SpringCloudConfigRepo.git
             project-b:
-              pattern: project-b/dev # {application}/{profile}
+              pattern: project-b/* # {application}/{profile}
               uri: https://github.com/luosai001/config-repo.git
               search-paths: file  # 查找仓库根目录和file 目录， 应用正则表达式
 
